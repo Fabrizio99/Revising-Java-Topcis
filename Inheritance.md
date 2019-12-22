@@ -34,8 +34,22 @@ Overriding is a feature that allows a subclass to provide a specific implementat
 ![Employee Class 1](img/img4.png)
 In the above example, we can visualize that getFullData() method of Employee class is overriding the method of the superclass (Person).
 ## Casting with objects.
-![Upcasting-Downcasting](https://i.stack.imgur.com/Lkn0S.png)
+
+### Reference variable
+First of all we need to undertand what reference variable is.
+```Java
+    // Creating a reference
+    Person person2;
+    // Creating a references and a Person object
+    Person person3 = new Person("Luis", "Alberto", 23, "Colombia");
+```
+Casting with reference variables works differently than primitive conversions due to a reference variable only refers to an object but doesn't contain the object itself.
+It only labels the object in another way.
 ### Upcasting
-It refers to cast to a superclass and is always allowed.
+It refers to cast to a superclass and is always allowed. Upcasting narrows the list of methods and properties to the object.
 ### Downcasting
-It refers to cast to a subclass and the type of the object must be declared.
+It refers to cast to a subclass and the type of the object must be declared. Downcasting extends the list of methods and properties to the object.
+
+![Upcasting-Downcasting](https://i.stack.imgur.com/Lkn0S.png "Image of downcasting and upcasting explanation.")
+
+Example:
