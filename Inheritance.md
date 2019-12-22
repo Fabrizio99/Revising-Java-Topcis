@@ -27,8 +27,15 @@ Example:
     ![Person Class 1](img/img1.png)
     ![Person Class 2](img/img2.png)
 - This is Employee Class derived from Person Class.
-    ![Employee Class 1](img/img3.png)
+    ![Employee Class](img/img3.png)
 
+## Overriding
+Overriding is a feature that allows a subclass to provide a specific implementation of a method that already exists in the superclass. In other words, when the subclass has a method with the same name as a method from the superclass, that method is overriding the method of the superclass.
+![Employee Class 1](img/img4.png)
+In the above example, we can visualize that getFullData() method of Employee class is overriding the method of the superclass (Person).
 ## Casting with objects.
 ![Upcasting-Downcasting](https://i.stack.imgur.com/Lkn0S.png)
-
+### Upcasting
+It refers to cast to a superclass and is always allowed.
+### Downcasting
+It refers to cast to a subclass and the type of the object must be declared.
