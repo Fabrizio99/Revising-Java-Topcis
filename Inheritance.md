@@ -6,7 +6,7 @@ Here we have some short but important definitions:
 - Subclass  
     It's the class that is derived from another class, also known as *derived class, extended class or child class*.
 - Superclass    
-    It's the class from the subclass is derived, also known as *base class oe parent class*.
+    It's the class from the subclass is derived, also known as *base class or parent class*.
 
 A class only have one direct superclass except *Object* class, which doesn't have it.
 
@@ -152,3 +152,43 @@ Person person2 = new Employee("Luis", "Felipe", 19, "Bolivia", 15000);
 //downcasting
 Employee employee3 = (Employee) person2;
 ```
+
+## Polymorphism
+Polymorphism is mostly used with classes that are related by inheritance, as we know, a class inherits attributes and methods from its superclass but with polymorphism, classes can use those methods to perform different actions.
+Example:
+```Java
+Person person1 = new Person("Fabrizio", "Condori", 20, "Perú");
+Employee employee1 = new Employee("Juan", "Velazco", 30, "Perú", 4350);
+Person person2 = new Employee("Luis", "Felipe", 19, "Bolivia", 15000);
+
+System.out.println(person1.getFullData());
+/*output
+
+Full Name : Fabrizio Condori
+Age: 20
+Country: Perú*/
+System.out.println(employee1.getFullData());
+/*output
+
+Full Name : Juan Velazco
+Age: 30
+Country: Perú
+Salary: 4350.0
+*/
+System.out.println(person2.getFullData());
+/*output
+
+Full Name : Luis Felipe
+Age: 19
+Country: Bolivia
+Salary: 15000.0
+*/
+```
+On the above example, there is an weird output from one example (person2 variable) because the variable's type is an Person object and the method getFullData() behave as if the object was an Employee object. 
+This is because the Java Virtual Machine (JVM) calls the methods for the object that is referred to in each variable, it does not call the methods that is defined by the variable's type.
+
+## References
+- https://docs.oracle.com/javase/tutorial/java/IandI/index.html
+- https://www.w3schools.com/java/java_polymorphism.asp
+- https://www.baeldung.com/java-type-casting
+
