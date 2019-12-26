@@ -24,14 +24,103 @@ A subclass does not inherit the private members of its parent class. However, if
 
 Example:    
 - This is the Person Class.
-    ![Person Class 1](img/img1.png)
-    ![Person Class 2](img/img2.png)
+    ```Java
+    public class Person {
+        private String firstName;
+        private String lastName;
+        private int age;
+        private String country;
+        
+        public Person(String firstName, String lastName, int age, String country){
+            this.firstName = firstName;
+            this.lastName = lastName;
+            this.age = age;
+            this.country = country;
+        }
+        
+        public String getFullData(){
+            return "Full Name : "+this.getFirstName()+" "+this.getlastName()+"\nAge: "+
+                    this.getAge()+"\nCountry: "+this.getCountry();
+        }
+        
+        public String getFirstName() {
+            return firstName;
+        }
+
+        public void setFirstName(String firstName) {
+            this.firstName = firstName;
+        }
+
+        public String getlastName() {
+            return lastName;
+        }
+
+        public void setlastName(String lastName) {
+            this.lastName = lastName;
+        }
+
+        public int getAge() {
+            return age;
+        }
+
+        public void setAge(int age) {
+            this.age = age;
+        }
+
+        public String getCountry() {
+            return country;
+        }
+
+        public void setCountry(String country) {
+            this.country = country;
+        }
+        
+    }
+    ```
 - This is Employee Class derived from Person Class.
-    ![Employee Class](img/img3.png)
+    ```java
+    public class Employee extends Person{
+        private double salary;
+        public Employee(String firstName, String lastName, int age, String country, double salary){
+            super(firstName, lastName, age, country);
+            this.salary = salary;
+        }
+
+        public double getSalary() {
+            return salary;
+        }
+
+        public void setSalary(double salary) {
+            this.salary = salary;
+        }
+        
+    }
+    ```
 
 ## Overriding
 Overriding is a feature that allows a subclass to provide a specific implementation of a method that already exists in the superclass. In other words, when the subclass has a method with the same name as a method from the superclass, that method is overriding the method of the superclass.
-![Employee Class 1](img/img4.png)
+```Java
+public class Employee extends Person{
+    private double salary;
+    public Employee(String firstName, String lastName, int age, String country, double salary){
+        super(firstName, lastName, age, country);
+        this.salary = salary;
+    }
+
+    public double getSalary() {
+        return salary;
+    }
+
+    public void setSalary(double salary) {
+        this.salary = salary;
+    }
+    
+    public String getFullData(){
+        return super.getFullData()+"\nSalary: "+this.getSalary();
+    }
+    
+}
+```
 In the above example, we can visualize that getFullData() method of Employee class is overriding the method of the superclass (Person).
 ## Casting with objects.
 
@@ -53,3 +142,13 @@ It refers to cast to a subclass and the type of the object must be declared. Dow
 ![Upcasting-Downcasting](https://i.stack.imgur.com/Lkn0S.png "Image of downcasting and upcasting explanation.")
 
 Example:
+```Java
+Person person1 = new Person("Fabrizio", "Condori", 20, "Perú");
+Employee employee1 = new Employee("Juan", "Velazco", 30, "Perú", 4350);
+
+//upcasting
+Person person2 = new Employee("Luis", "Felipe", 19, "Bolivia", 15000);
+
+//downcasting
+Employee employee3 = (Employee) person2;
+```
