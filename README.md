@@ -1,2 +1,2 @@
-# Revising-Java-Topcis
-# Revising-Java-Topcis
+# Revising-Java-Topics
+- [Inheritance](Inheritance.md)
