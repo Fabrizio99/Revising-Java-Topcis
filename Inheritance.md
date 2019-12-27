@@ -184,11 +184,10 @@ Country: Bolivia
 Salary: 15000.0
 */
 ```
-On the above example, there is an weird output from one example (person2 variable) because the variable's type is an Person object and the method getFullData() behave as if the object was an Employee object. 
+On the above example, there is a weird output from one example (person2 variable) because the variable's type is a Person object and the method getFullData() behave as if the object was a Employee object. 
 This is because the Java Virtual Machine (JVM) calls the methods for the object that is referred to in each variable, it does not call the methods that is defined by the variable's type.
 
 ## References
 - https://docs.oracle.com/javase/tutorial/java/IandI/index.html
 - https://www.w3schools.com/java/java_polymorphism.asp
 - https://www.baeldung.com/java-type-casting
-
